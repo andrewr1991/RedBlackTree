@@ -1,3 +1,8 @@
+/*
+ * Origin code by Bob Weems PhD
+ * Modified by Andrew Ridout
+ */
+
 // Driver to handle operations in 2320 Lab 3, Spr 2017
 #include <stdlib.h>
 #include <stdio.h>

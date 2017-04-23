@@ -1,3 +1,8 @@
+/*
+ * Origin code by Bob Weems PhD
+ * Modified by Andrew Ridout
+ */
+
 // Loads a red-black tree in ancestry order, then processes
 // inserts with tracing
 #include <stdlib.h>

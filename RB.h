@@ -1,3 +1,8 @@
+/*
+ * Origin code by Bob Weems PhD
+ * Modified by Andrew Ridout
+ */
+
 // Bottom-up red-black tree header file - lab 3 spring 2017
 
 // These will have to change if data in node is more than just an int.

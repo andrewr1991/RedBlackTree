@@ -1,3 +1,8 @@
+/*
+ * Origin code by Bob Weems PhD
+ * Modified by Andrew Ridout
+ */
+
 // Bottom-up red-black tree implementation without deletions,
 // so free() does not appear.
 

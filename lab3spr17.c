@@ -61,13 +61,13 @@ while (op)
       printf("7\n");
       STprintTree();
       break;
-    case 8:/*
+    case 8:
       printf("8\n");
       if (verifyRBproperties())
         printf("clean\n");
       else
         printf("corrupt\n");
-      break;*/
+      break;
     default:
       printf("Bad operation %d\n",op);
   }

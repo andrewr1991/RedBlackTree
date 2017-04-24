@@ -271,7 +271,7 @@ if (head->red)
 head->red = 0;
 }
 
-void checkRed(link h,int redParent)
+int checkRed(link h,int redParent)
 // Verifies property 3 in notes
 {
 if (redParent && h->red)
@@ -281,9 +281,10 @@ if (redParent && h->red)
   exit(0);
 }
 if (h==z)
-  return;
+  return 1;
 checkRed(h->l,h->red);
 checkRed(h->r,h->red);
+return 1;
 }
 
 int leftPathBlackHeight(link h)
@@ -294,13 +295,13 @@ if (h==z)
 return leftPathBlackHeight(h->l) + !(h->red);
 }
 
-void checkBlack(link h,int blackCount)
+int checkBlack(link h,int blackCount)
 // Checks that all paths downward from a node have the same
 // number of black nodes
 {
 if (h==z) {
   if (blackCount==!(h->red))
-    return;
+    return 1;
   else {
     printf("Black height problem!\n");
     STprintTree();
@@ -317,15 +318,16 @@ else
   checkBlack(h->l,blackCount-1);
   checkBlack(h->r,blackCount-1);
 }
+return 1;
 }
 
 Key lastInorder;    // Saves key from last node processed
 
-void checkInorder(link h)
+int checkInorder(link h)
 // Checks that inorder yields keys in ascending order
 {
 if (h==z)
-  return;
+  return 1;
 
 checkInorder(h->l);
 if (less(h->item,lastInorder))
@@ -336,6 +338,7 @@ if (less(h->item,lastInorder))
 }
 lastInorder=key(h->item);
 checkInorder(h->r);
+return 1;
 }
 
 int checkN(link h)
@@ -387,6 +390,12 @@ if (checkInorder(head) && checkRed(head,0)) {
 	if (checkBlack(head,lpbHeight) && checkN(head)) {
 		return 1;
 	}
+  else {
+    return 0;
+  }
+}
+  else {
+    return 0;
 }
 }
 
